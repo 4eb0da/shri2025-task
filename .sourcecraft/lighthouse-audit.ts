@@ -51,7 +51,7 @@ function score(lhr) {
         'interactive': lhr.audits['interactive'].observedDomContentLoaded,
         // 'last-visual-change': lhr.audits['last-visual-change'].observerLastVisualChange,
         'total-byte-weight': lhr.audits['total-byte-weight'].numericValue,
-        'first-byte': lhr.audits['first-byte'].numericValue,
+        'first-byte': lhr.audits['server-response-time'].numericValue,
     };
 
     console.log(vals);
