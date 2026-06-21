@@ -48,7 +48,7 @@ function score(lhr) {
     const vals = {
         'first-contentful-paint': lhr.audits['first-contentful-paint'].numericValue,
         'largest-contentful-paint': lhr.audits['largest-contentful-paint'].numericValue,
-        'interactive': lhr.audits['interactive'].observedDomContentLoaded,
+        'interactive': lhr.audits['interactive'].numericValue,
         // 'last-visual-change': lhr.audits['last-visual-change'].observerLastVisualChange,
         'total-byte-weight': lhr.audits['total-byte-weight'].numericValue,
         'first-byte': lhr.audits['server-response-time'].numericValue,
