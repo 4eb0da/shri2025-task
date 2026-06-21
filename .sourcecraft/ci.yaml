@@ -16,8 +16,7 @@ tasks:
         image: node:24-alpine
         script:
           - |
-            npm init -y && \
-            npm install chrome-launcher lighthouse serve && \
+            npm ci
             npx serve -s . -l 3000 & \
             SERVER_PID=$! && \
             node .sourcecraft/lighthouse-audit.js && \
