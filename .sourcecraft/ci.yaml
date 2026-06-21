@@ -4,6 +4,11 @@ on:
       filter:
         branches: ["main"]
 
+workflows:
+  build-workflow:
+    tasks:
+      - build-task
+
 tasks:
   - name: build-task
     cubes:
