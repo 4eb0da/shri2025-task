@@ -16,6 +16,8 @@ tasks:
         image: node:24-alpine
         script:
           - |
+            apk add --no-cache chromium
+            export CHROME_PATH=/usr/bin/chromium-browser
             npm ci
             npx serve -s . -l 3000 & \
             SERVER_PID=$! && \
