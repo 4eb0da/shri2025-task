@@ -41,15 +41,15 @@ function score(lhr) {
     console.log(Object.keys(lhr.audits));
     console.log(lhr.audits['first-contentful-paint'])
     console.log(lhr.audits['largest-contentful-paint'])
-    console.log(lhr.audits['dom-content-loaded'])
-    console.log(lhr.audits['last-visual-change'])
-    console.log(lhr.audits['total-byte-length'])
-    console.log(lhr.audits['first-byte'])
+    console.log(lhr.audits['interactive'])
+    console.log(lhr.audits['total-byte-weight'])
+    console.log(lhr.audits['server-response-time'])
+    console.log(lhr.audits['network-server-latency'])
     const vals = {
         'first-contentful-paint': lhr.audits['first-contentful-paint'].numericValue,
         'largest-contentful-paint': lhr.audits['largest-contentful-paint'].numericValue,
-        'dom-content-loaded': lhr.audits['dom-content-loaded'].observedDomContentLoaded,
-        'last-visual-change': lhr.audits['last-visual-change'].observerLastVisualChange,
+        'interactive': lhr.audits['interactive'].observedDomContentLoaded,
+        // 'last-visual-change': lhr.audits['last-visual-change'].observerLastVisualChange,
         'total-byte-weight': lhr.audits['total-byte-weight'].numericValue,
         'first-byte': lhr.audits['first-byte'].numericValue,
     };
@@ -64,8 +64,8 @@ function score(lhr) {
 
     return func1(vals['first-contentful-paint'] - vals['first-byte']) +
         func1(vals['largest-contentful-paint'] - vals['first-byte']) +
-        func1(vals['dom-content-loaded'] - vals['first-byte']) +
-        func1(vals['last-visual-change'] - vals['first-byte']) +
+        func1(vals['interactive'] - vals['first-byte']) +
+        // func1(vals['last-visual-change'] - vals['first-byte']) +
         func3(vals['total-byte-weight']);
 }
 
