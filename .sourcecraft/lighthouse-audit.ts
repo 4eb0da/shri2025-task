@@ -38,6 +38,7 @@ function func3(val: number): number {
 const RUNS = 8;
 
 function score(lhr) {
+    console.log(JSON.stringify(lhr.audits));
     const vals = {
         'first-contentful-paint': lhr.audits['first-contentful-paint'].rawValue,
         'first-meaningful-paint': lhr.audits['first-meaningful-paint'].rawValue,
