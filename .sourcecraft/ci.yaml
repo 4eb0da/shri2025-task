@@ -1,0 +1,19 @@
+on:
+  push:
+    - workflows: build-workflow
+      filter:
+        branches: ["main"]
+
+tasks:
+  - name: build-task
+    cubes:
+      - name: build
+        image: node:24-alpine
+        script:
+          - |
+            npm init -y && \
+            npm install chrome-launcher lighthouse serve && \
+            npx serve -s . -l 3000 & \
+            SERVER_PID=$! && \
+            node .sourcecraft/lighthouse-audit.js && \
+            kill $SERVER_PID
