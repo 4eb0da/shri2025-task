@@ -19,7 +19,7 @@ tasks:
             set -ex
             node -v
             apt update
-            apt install chromium chromium-l10n
+            apt install chromium chromium-l10n -y
             export CHROME_PATH=/usr/bin/chromium-browser
             npm ci
             #npx testplane install-deps
