@@ -18,7 +18,8 @@ tasks:
           - |
             set -ex
             node -v
-            #apt install chromium-browser
+            apt update
+            apt install chromium-browser
             #export CHROME_PATH=/usr/bin/chromium-browser
             npm ci
             #npx testplane install-deps
