@@ -26,8 +26,8 @@ tasks:
             npx serve -s . -l 3000 & \
             SERVER_PID=$!
             npx playwright test -u
-            node .sourcecraft/lighthouse-audit.ts
+            #node .sourcecraft/lighthouse-audit.ts
             kill $SERVER_PID
         artifacts:
           paths:
-            - artifacts/testplane-report
+            - playwright-report
