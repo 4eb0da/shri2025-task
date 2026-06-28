@@ -21,7 +21,7 @@ tasks:
             export CHROME_PATH=/usr/bin/chromium-browser
             npm ci
             #npx testplane install-deps
-            npx playwright install --with-deps
+            npx playwright install
             npx serve -s . -l 3000 & \
             SERVER_PID=$!
             npx playwright test -u
