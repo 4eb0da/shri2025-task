@@ -21,9 +21,9 @@ tasks:
             export CHROME_PATH=/usr/bin/chromium-browser
             npm ci
             npx serve -s . -l 3000 & \
-            npx testplane --update-refs \
-            SERVER_PID=$! && \
-            node .sourcecraft/lighthouse-audit.ts && \
+            SERVER_PID=$!
+            npx testplane --update-refs
+            node .sourcecraft/lighthouse-audit.ts
             kill $SERVER_PID
         artifacts:
           paths:
