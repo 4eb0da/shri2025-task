@@ -17,7 +17,7 @@ tasks:
         script:
           - |
             set -ex
-            apt install chromium
+            apt install chromium-browser
             export CHROME_PATH=/usr/bin/chromium-browser
             npm ci
             #npx testplane install-deps
