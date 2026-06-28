@@ -20,6 +20,7 @@ tasks:
             apk add --no-cache chromium
             export CHROME_PATH=/usr/bin/chromium-browser
             npm ci
+            npx testplane install-deps
             npx serve -s . -l 3000 & \
             SERVER_PID=$!
             npx testplane --update-refs
