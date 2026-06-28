@@ -20,10 +20,11 @@ tasks:
             apk add --no-cache chromium
             export CHROME_PATH=/usr/bin/chromium-browser
             npm ci
-            npx testplane install-deps
+            #npx testplane install-deps
+            npx playwright install --with-deps
             npx serve -s . -l 3000 & \
             SERVER_PID=$!
-            npx testplane --update-refs
+            npx playwright test -u
             node .sourcecraft/lighthouse-audit.ts
             kill $SERVER_PID
         artifacts:

@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Оптимизировать страницу, выложить результат на Github-Pages и отправить его на проверку на [https://shri-performance.ru/](https://shri-performance.ru/), отправив адрес вашей страницы. Нужно набрать минимум **80 баллов**. Набрать больше баллов возможно, но больше 120 в зачёт не пойдёт.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/4eb0da/shri2025-task.git"
@@ -19,13 +17,16 @@
   },
   "homepage": "https://github.com/4eb0da/shri2025-task#readme",
   "devDependencies": {
+    "@playwright/test": "^1.61.1",
     "@swc/core": "^1.15.41",
     "@testplane/testing-library": "^1.0.5",
+    "@types/node": "^26.0.1",
     "chrome-launcher": "^1.2.1",
     "html-reporter": "^11.11.0",
     "lighthouse": "^13.4.0",
+    "playwright": "^1.61.1",
     "serve": "^14.2.6",
-    "testplane": "8.40",
+    "testplane": "^9.0.3",
     "typescript": "^6.0.3"
   }
 }
