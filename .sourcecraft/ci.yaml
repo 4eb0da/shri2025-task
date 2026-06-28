@@ -16,6 +16,7 @@ tasks:
         image: node:24-alpine
         script:
           - |
+            set -ex
             apk add --no-cache chromium
             export CHROME_PATH=/usr/bin/chromium-browser
             npm ci
