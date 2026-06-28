@@ -13,12 +13,13 @@ tasks:
   - name: build-task
     cubes:
       - name: build
-        image: node:24
+        image: ubuntu-latest
         script:
           - |
             set -ex
-            apt install chromium-browser
-            export CHROME_PATH=/usr/bin/chromium-browser
+            node -v
+            #apt install chromium-browser
+            #export CHROME_PATH=/usr/bin/chromium-browser
             npm ci
             #npx testplane install-deps
             npx playwright install --with-deps
