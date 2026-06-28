@@ -19,15 +19,15 @@ tasks:
             set -ex
             node -v
             apt update
-            apt install chromium-browser
-            #export CHROME_PATH=/usr/bin/chromium-browser
+            apt install chromium chromium-l10n
+            export CHROME_PATH=/usr/bin/chromium-browser
             npm ci
             #npx testplane install-deps
             npx playwright install --with-deps
             npx serve -s . -l 3000 & \
             SERVER_PID=$!
             npx playwright test -u
-            #node .sourcecraft/lighthouse-audit.ts
+            node .sourcecraft/lighthouse-audit.ts
             kill $SERVER_PID
         artifacts:
           paths:
