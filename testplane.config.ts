@@ -1,6 +1,8 @@
 import { setupBrowser } from "@testplane/testing-library";
 import type { WdioBrowser } from "testplane";
 
+console.log('BINARY', process.env.CHROME_PATH);
+
 // Read more about configuring Testplane at https://testplane.io/docs/v8/config/main/
 export default {
     gridUrl: "local",
