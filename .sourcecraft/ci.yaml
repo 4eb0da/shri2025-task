@@ -17,7 +17,7 @@ tasks:
         script:
           - |
             set -ex
-            apk add --no-cache chromium# libgles2 gstreamer1.0-libav
+            apt add --no-cache chromium
             export CHROME_PATH=/usr/bin/chromium-browser
             npm ci
             #npx testplane install-deps
