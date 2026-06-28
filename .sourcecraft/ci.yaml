@@ -17,7 +17,7 @@ tasks:
         script:
           - |
             set -ex
-            apt add --no-cache chromium
+            apt install chromium
             export CHROME_PATH=/usr/bin/chromium-browser
             npm ci
             #npx testplane install-deps
