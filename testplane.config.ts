@@ -24,7 +24,11 @@ export default {
         chrome: {
             headless: true,
             desiredCapabilities: {
-                browserName: "chrome"
+                browserName: "chrome",
+                "goog:chromeOptions": process.env.CHROME_PATH ? {
+                    binary: process.env.CHROME_PATH,
+                    args: []
+                } : undefined
             }
         },
         // firefox: {
