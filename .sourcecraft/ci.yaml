@@ -13,15 +13,15 @@ tasks:
   - name: build-task
     cubes:
       - name: build
-        image: node:24-alpine
+        image: node:24
         script:
           - |
             set -ex
-            apk add --no-cache chromium libgles2 gstreamer1.0-libav
+            apk add --no-cache chromium# libgles2 gstreamer1.0-libav
             export CHROME_PATH=/usr/bin/chromium-browser
             npm ci
             #npx testplane install-deps
-            npx playwright install
+            npx playwright install --with-deps
             npx serve -s . -l 3000 & \
             SERVER_PID=$!
             npx playwright test -u
