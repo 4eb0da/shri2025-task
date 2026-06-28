@@ -13,7 +13,7 @@ tasks:
   - name: build-task
     cubes:
       - name: build
-        image: ubuntu-latest
+        image: node:24
         script:
           - |
             set -ex
