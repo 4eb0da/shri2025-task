@@ -38,13 +38,13 @@ function func3(val: number): number {
 const RUNS = 8;
 
 function score(lhr) {
-    console.log(Object.keys(lhr.audits));
-    console.log(lhr.audits['first-contentful-paint'])
-    console.log(lhr.audits['largest-contentful-paint'])
-    console.log(lhr.audits['interactive'])
-    console.log(lhr.audits['total-byte-weight'])
-    console.log(lhr.audits['server-response-time'])
-    console.log(lhr.audits['network-server-latency'])
+    // console.log(Object.keys(lhr.audits));
+    // console.log(lhr.audits['first-contentful-paint'])
+    // console.log(lhr.audits['largest-contentful-paint'])
+    // console.log(lhr.audits['interactive'])
+    // console.log(lhr.audits['total-byte-weight'])
+    // console.log(lhr.audits['server-response-time'])
+    // console.log(lhr.audits['network-server-latency'])
     const vals = {
         'first-contentful-paint': lhr.audits['first-contentful-paint'].numericValue,
         'largest-contentful-paint': lhr.audits['largest-contentful-paint'].numericValue,

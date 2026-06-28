@@ -20,6 +20,10 @@ tasks:
             export CHROME_PATH=/usr/bin/chromium-browser
             npm ci
             npx serve -s . -l 3000 & \
+            npx testplane -u \
             SERVER_PID=$! && \
             node .sourcecraft/lighthouse-audit.ts && \
             kill $SERVER_PID
+        artifacts:
+          paths:
+            - artifacts/testplane-report

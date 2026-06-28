@@ -19,8 +19,13 @@
   },
   "homepage": "https://github.com/4eb0da/shri2025-task#readme",
   "devDependencies": {
+    "@swc/core": "^1.15.41",
+    "@testplane/testing-library": "^1.0.5",
     "chrome-launcher": "^1.2.1",
+    "html-reporter": "^11.11.0",
     "lighthouse": "^13.4.0",
-    "serve": "^14.2.6"
+    "serve": "^14.2.6",
+    "testplane": "^9.0.0",
+    "typescript": "^6.0.3"
   }
 }
