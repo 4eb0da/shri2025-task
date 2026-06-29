@@ -12,24 +12,38 @@ workflows:
 tasks:
   - name: build-task
     cubes:
-      - name: build
-        image: node:24
-        script:
-          - |
-            set -ex
-            node -v
-            apt update
-            apt install chromium chromium-l10n -y
-            export CHROME_PATH=/usr/bin/chromium-browser
-            npm ci
-            #npx testplane install-deps
-            npx playwright install --with-deps
-            npx serve -s . -l 3000 & \
-            SERVER_PID=$!
-            npx playwright test
-            echo $?
-            node .sourcecraft/lighthouse-audit.ts
-            kill $SERVER_PID
+      - name: run-shared-workflow
+        image: cr.yandex/sourcecraft/cubes/shared-workflows:latest
+        env:
+          ORG_SLUG: garret-rus
+          REPO_SLUG: shri-task-professor
+          WORKFLOW_NAME: build-workflow
+          # WORKFLOW_VALUES: '[{"name": "STUDENTREPO", "value": "student"}, {"name": "TASK", "value": "task-1"}]'
+          TASK_NAME: build-task
+          CUBE_NAME: build
+          ARTIFACT_LOCAL_PATH: artifacts/professor-output
         artifacts:
           paths:
-            - playwright-report
+            - artifacts/output
+
+      # - name: build
+      #   image: node:24
+      #   script:
+      #     - |
+      #       set -ex
+      #       node -v
+      #       apt update
+      #       apt install chromium chromium-l10n -y
+      #       export CHROME_PATH=/usr/bin/chromium-browser
+      #       npm ci
+      #       #npx testplane install-deps
+      #       npx playwright install --with-deps
+      #       npx serve -s . -l 3000 & \
+      #       SERVER_PID=$!
+      #       npx playwright test
+      #       echo $?
+      #       node .sourcecraft/lighthouse-audit.ts
+      #       kill $SERVER_PID
+      #   artifacts:
+      #     paths:
+      #       - playwright-report
