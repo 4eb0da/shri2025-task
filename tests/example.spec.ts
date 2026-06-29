@@ -2,6 +2,8 @@ import { test, expect } from '@playwright/test';
 
 test('should looks same', async ({ page }) => {
   await page.goto('http://localhost:3000/');
+  await page.waitForLoadState('networkidle')
+  await page.waitForTimeout(1000);
 
   await expect(page).toHaveScreenshot();
 });
