@@ -77,7 +77,7 @@ async function runLighthouse() {
     const chrome = await launch({ chromeFlags: ['--headless', '--no-sandbox'] });
 
     const options = {
-        logLevel: 'info',
+        // logLevel: 'info',
         output: 'json',
         onlyCategories: ['performance'],
         port: chrome.port,
