@@ -26,7 +26,7 @@ tasks:
           paths:
             - artifacts/output
 
-      # 3
+      # 4
       # - name: build
       #   image: node:24
       #   script:
